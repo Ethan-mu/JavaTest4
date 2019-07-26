@@ -27,8 +27,8 @@ public class FilmController {
 		Short a=Short.valueOf(page);
 		Short b=Short.valueOf(pageSize);
 		Map<String,Object> pageInfo=filmService.slectBetween(a, b);
-		System.out.println(pageInfo.get("pageInfo"));
 		List<Film> filmList=(List<Film>) pageInfo.get("pageInfo");
+		logger.info("==============="+filmList.toString());
 		return new Result<List<Film>>(200, "success", filmList);
 	}
 

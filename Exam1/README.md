@@ -1,15 +1,7 @@
-# Getting Started
+# 启动说明
 
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Quick Start](https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start)
-
+### 1.执行build.sh
+### 2.执行start.sh
+### 3.执行curl.sh
+### 4.执行stop.sh
+### 5:Exam2的pagehelp在exam1中实现了，都在curl中以shell方式进行访问，curl里面也有对应的说明

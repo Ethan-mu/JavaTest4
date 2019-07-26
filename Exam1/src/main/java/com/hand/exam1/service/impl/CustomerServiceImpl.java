@@ -68,9 +68,10 @@ public class CustomerServiceImpl implements CustomerService {
 	public void update(CustomerVo customerVo) {
 
 		Customer customer=new Customer();
+		customer.setCustomerId(customerVo.getCustomerId());
 		customer.setLastName(customerVo.getLastName());
 		customer.setFirstName(customerVo.getFirstName());
-		customer.setEmail(customer.getEmail());
+		customer.setEmail(customerVo.getEmail());
 		customer.setActive(true);
 		customer.setAddressId((short)1);
 		customer.setCreateDate(new Date());
