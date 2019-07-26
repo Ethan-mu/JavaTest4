@@ -17,9 +17,9 @@ public class Exam1Application extends WebMvcConfigurerAdapter {
 		SpringApplication.run(Exam1Application.class, args);
 	}
 
-	@Override
-	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-		argumentResolvers.add(new RequestJsonHandlerMethodArgumentResolver());
-		super.addArgumentResolvers(argumentResolvers);
-	}
+//	@Override
+//	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+//		argumentResolvers.add(new RequestJsonHandlerMethodArgumentResolver());
+//		super.addArgumentResolvers(argumentResolvers);
+//	}
 }

@@ -1,7 +1,8 @@
 package com.hand.exam1.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
-import com.hand.exam1.common.RequestJson;
+import com.hand.exam1.common.ParamModel;
 import com.hand.exam1.common.Result;
 import com.hand.exam1.entity.Film;
 import com.hand.exam1.service.FilmService;
@@ -11,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -31,16 +31,19 @@ public class FilmController {
 		return new Result<List<Film>>(200, "success", filmList);
 	}
 
-	@RequestMapping(value = "/queryPage",method = RequestMethod.GET)
-	public Result<List<Film>> queryPage(@RequestJson("a")Page page){
+	@GetMapping("/queryPage")
+	public Result queryPage(@ParamModel Page page) {
 
-//		Map<String,Object> pageInfo=filmService.slectBetween(a, b);
-//		List<Film> filmList=(List<Film>) pageInfo.get("pageInfo");
-//		logger.info("==============="+filmList.toString());
-		System.out.println(page);
-		return new Result<List<Film>>(200, "success", null);
+		Short a=(short)page.getPage();
+		Short b=(short)page.getPageSize();
+
+		Map<String,Object> pageInfo=filmService.slectBetween(a,b);
+		List<Film> filmList=(List<Film>) pageInfo.get("pageInfo");
+		logger.info("==============="+filmList.toString());
+		return new Result<List<Film>>(200, "success", filmList);
+
+
 	}
-
 	@RequestMapping(value = "/addFilm",method = RequestMethod.PUT)
 	public Result addFilm(@RequestBody Film f){
 		Film film=new Film();
