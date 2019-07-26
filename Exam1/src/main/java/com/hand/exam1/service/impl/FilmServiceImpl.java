@@ -47,7 +47,11 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public Integer insert(Film film) {
-		return null;
+	public boolean insert(Film film) {
+		Integer i=filmMapper.insertSelective(film);
+		if(i>0){
+			return true;
+		}
+		return false;
 	}
 }

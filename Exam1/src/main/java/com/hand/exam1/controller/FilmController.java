@@ -9,10 +9,7 @@ import com.hand.exam1.vo.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -44,6 +41,18 @@ public class FilmController {
 		return new Result<List<Film>>(200, "success", null);
 	}
 
+	@RequestMapping(value = "/addFilm",method = RequestMethod.PUT)
+	public Result addFilm(@RequestBody Film f){
+		Film film=new Film();
+		film.setDescription(f.getDescription());
+		film.setLanguageId(Byte.valueOf(f.getLanguageId()));
+		film.setTitle(f.getTitle());
+		boolean b=filmService.insert(film);
+		if (b){
+			return new Result(200, "插入成功",b);
+		}
+		return new Result(200, "插入失败",b);
+	}
 
 
 }

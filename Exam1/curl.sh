@@ -24,3 +24,15 @@ curl -H "Content-Type: application/json" -X POST  --data '{
 #delete
 echo "======删除用户======="
 curl -X DELETE "http://localhost:18080/delete/"+${result}
+
+echo "=====================================film表操作=============================="
+
+echo "==============插入数据======================"
+curl -H "Content-Type: application/json" -X PUT  --data '{
+"languageId":"1",
+"title":"2",
+"description":"3"
+}' http://localhost:18080/addFilm
+
+echo "==============pagehelper分页======================"
+curl http://localhost:18080/queryAll/1/6

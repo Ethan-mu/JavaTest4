@@ -1,3 +1,2 @@
-chmod +x stop.sh
-docker logs v1-web
+docker logs web
 docker-compose down

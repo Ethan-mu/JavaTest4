@@ -11,5 +11,5 @@ public interface FilmService {
 	Film selectOne(short id);
 	List<Film> selectAll();
 	public Map<String,Object> slectBetween(short a, short b);
-	Integer insert(Film film);
+	boolean insert(Film film);
 }
