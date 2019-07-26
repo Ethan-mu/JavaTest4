@@ -2,10 +2,10 @@ version: "3"
 services:
   web:
     container_name: v1-web
-    build: ./web/
+    build: ./docker/java/
     restart: always
     ports:
-    - "18080:8080"
+    - "18080:18080"
     environment:
       username: lzz
       password: lzz
@@ -26,5 +26,5 @@ services:
     ports:
     - "3306:3306"
     volumes:
-    - ./db:/docker-entrypoint-initdb.d
+    - ./docker/java/:/docker-entrypoint-initdb.d
 

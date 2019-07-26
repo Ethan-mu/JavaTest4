@@ -1,5 +1,5 @@
-chmod +x curl.sh
- curl http://localhost:8080/login/LINDA/aa
+echo "======用户登录======="
+curl http://localhost:18080/login/LINDA/aa
 
 #add
 echo "======添加用户======="
@@ -8,7 +8,7 @@ result=`curl -H "Content-Type: application/json" -X PUT  --data '{
 "lastName":"3333",
 "email":"33333",
 "address":"aaaa"
-}' http://localhost:8080/add 2>/dev/null|awk -F '[:,]' '{print $7}'`
+}' http://localhost:18080/add 2>/dev/null|awk -F '[:,]' '{print $7}'`
 echo ${result}
 
 #update
@@ -18,9 +18,9 @@ curl -H "Content-Type: application/json" -X POST  --data '{
 "lastName":"4444",
 "email":"444444444",
 "address":"aaaa"
-}' http://localhost:8080/update/${result}
+}' http://localhost:18080/update/${result}
 
 
 #delete
 echo "======删除用户======="
- curl -X DELETE "http://localhost:8080/delete/"+${result}
+curl -X DELETE "http://localhost:18080/delete/"+${result}

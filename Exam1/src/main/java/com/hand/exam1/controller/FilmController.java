@@ -1,9 +1,11 @@
 package com.hand.exam1.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.hand.exam1.common.RequestJson;
 import com.hand.exam1.common.Result;
 import com.hand.exam1.entity.Film;
 import com.hand.exam1.service.FilmService;
+import com.hand.exam1.vo.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,16 @@ public class FilmController {
 		List<Film> filmList=(List<Film>) pageInfo.get("pageInfo");
 		logger.info("==============="+filmList.toString());
 		return new Result<List<Film>>(200, "success", filmList);
+	}
+
+	@RequestMapping(value = "/queryPage",method = RequestMethod.GET)
+	public Result<List<Film>> queryPage(@RequestJson("a")Page page){
+
+//		Map<String,Object> pageInfo=filmService.slectBetween(a, b);
+//		List<Film> filmList=(List<Film>) pageInfo.get("pageInfo");
+//		logger.info("==============="+filmList.toString());
+		System.out.println(page);
+		return new Result<List<Film>>(200, "success", null);
 	}
 
 
