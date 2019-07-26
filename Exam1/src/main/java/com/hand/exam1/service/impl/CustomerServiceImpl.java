@@ -1,7 +1,5 @@
 package com.hand.exam1.service.impl;
 
-import com.hand.exam1.controller.CustomerController;
-import com.hand.exam1.entity.Actor;
 import com.hand.exam1.entity.Customer;
 import com.hand.exam1.entity.CustomerExample;
 import com.hand.exam1.mapper.CustomerMapper;

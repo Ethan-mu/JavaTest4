@@ -1,8 +1,6 @@
 package com.hand.exam1.service;
 
 
-import com.hand.exam1.entity.Actor;
-import com.hand.exam1.entity.Customer;
 import com.hand.exam1.vo.CustomerVo;
 
 import java.util.List;

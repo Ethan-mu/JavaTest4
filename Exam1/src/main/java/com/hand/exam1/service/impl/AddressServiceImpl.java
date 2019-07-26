@@ -1,6 +1,5 @@
 package com.hand.exam1.service.impl;
 
-import com.hand.exam1.entity.Actor;
 import com.hand.exam1.entity.Address;
 import com.hand.exam1.entity.AddressExample;
 import com.hand.exam1.mapper.AddressMapper;
